@@ -6,7 +6,6 @@ import 'package:spencerstolworthy_goals/src/screens/Onboarding/Login/LoginScreen
 import 'package:spencerstolworthy_goals/src/screens/EditItem/EditItem.dart';
 import 'package:spencerstolworthy_goals/src/screens/ItemFeed/ItemFeed.dart';
 import 'package:spencerstolworthy_goals/src/screens/ItemDetails/ItemDetails.dart';
-import 'package:spencerstolworthy_goals/src/screens/Onboarding/OnboardingRoutes.dart';
 
 class FlutterAppRoutes {
   static const String itemDetails = 'itemDetails';
@@ -39,8 +38,6 @@ class Router {
 
   static Route<dynamic> generatedRoute(RouteSettings settings) {
     switch (settings.name) {
-      case FlutterAppRoutes.onboarding:
-        return _pageRoute(OnboardingRoutes(), FlutterAppRoutes.onboarding);
       case FlutterAppRoutes.itemDetails:
         final ItemDetailsArguments args = settings.arguments;
         return _pageRoute(ItemDetails(args.item), FlutterAppRoutes.itemDetails);
@@ -57,7 +54,7 @@ class Router {
         return _pageRoute(
             EditItem(item: args?.item), FlutterAppRoutes.itemEdit);
       default:
-        return _pageRoute(OnboardingRoutes(), FlutterAppRoutes.onboarding);
+        return _pageRoute(WelcomeScreen(), FlutterAppRoutes.onboarding);
     }
   }
 }
