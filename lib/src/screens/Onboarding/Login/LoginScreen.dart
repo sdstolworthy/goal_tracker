@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:spencerstolworthy_goals/src/blocs/authentication/bloc.dart';
-import 'package:spencerstolworthy_goals/src/screens/Onboarding/OnboardingRoutes.dart';
-import 'package:spencerstolworthy_goals/src/services/localizations/localizations.dart';
 import 'package:spencerstolworthy_goals/src/services/navigator.dart';
+import 'package:spencerstolworthy_goals/src/blocs/authentication/bloc.dart';
+import 'package:spencerstolworthy_goals/src/services/localizations/localizations.dart';
 import 'package:spencerstolworthy_goals/src/services/routes.dart';
 import 'package:spencerstolworthy_goals/src/widgets/LoginFormField.dart';
 import 'package:spencerstolworthy_goals/src/widgets/OnboardingButton.dart';
@@ -47,7 +46,7 @@ class LoginScreen extends StatelessWidget {
                     Icons.arrow_back,
                     color: theme.appBarTheme.iconTheme.color,
                   ),
-                  onPressed: () => onboardingNavigator.goBack(),
+                  onPressed: () => rootNavigationService.goBack(),
                 )),
             body: LayoutBuilder(builder: (context, viewportConstraints) {
               return SingleChildScrollView(
