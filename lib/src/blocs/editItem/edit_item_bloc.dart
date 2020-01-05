@@ -22,7 +22,6 @@ class EditItemBloc extends Bloc<EditItemEvent, EditItemState> {
         final item = await _itemRepository.saveItem(event.item);
         yield ItemSaved(item);
       } catch (e) {
-        print(e);
         yield ItemSaveError();
       }
     }
